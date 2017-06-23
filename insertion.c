@@ -1,23 +1,26 @@
 #include<stdio.h>
-int main()
+int sort(int *array)
 { 
- int array[7]= {4,23,43,38,15,10,30};
- int i,j,temp;
-  
-   for(i=1;i<7;i++)
+   for(int i=1;i<7;i++)
      {
-      temp=array[i];
-      j=i-1;
-      while((temp<array[j])&&(j>=0))
+      int temp=array[i];
+      int j=i-1;
+      for(;j>0;array[j]>temp;j--)
      {
       array[j+1]=array[j];
      }
-       array[j]=temp;
+       array[j+1]=temp;
   }
-
-  printf("After sorting: ");
+ return 0;
+}
+int main()
+ {
+    int array[7]={4,23,43,38,15,10,30;
+    
+    sort(array);
+  
   for(i=0;i<7;i++)
    {
-      printf("%d ",array[i]);
+      printf("%d\n",array[i]);
    }
 }
